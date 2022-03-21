@@ -20,11 +20,11 @@ Download the code via Git or ZIP. Inside the folder, run ``` composer install ``
 The code will be exposed with Ngrok, tunneling localhost. The tunneling expires in 2 hours, so I will share the link when the meeting is near.
 
 ## Screenshots
-####Homepage
+#### Homepage
 ![alt text](https://github.com/bsampaio/velv-coding-challenge/blob/master/public/img/prints/index.png?raw=true)
-####Filters
+#### Filters
 ![alt text](https://github.com/bsampaio/velv-coding-challenge/blob/master/public/img/prints/filters.png?raw=true)
-####Comparison
+#### Comparison
 ![alt text](https://github.com/bsampaio/velv-coding-challenge/blob/master/public/img/prints/comparison.png?raw=true)
 
 

@@ -19,6 +19,15 @@ Download the code via Git or ZIP. Inside the folder, run ``` composer install ``
 ## Acess to the server
 The code will be exposed with Ngrok, tunneling localhost. The tunneling expires in 2 hours, so I will share the link when the meeting is near.
 
+## Screenshots
+####Homepage
+![alt text](https://github.com/bsampaio/velv-coding-challenge/blob/master/public/img/prints/index.png?raw=true)
+####Filters
+![alt text](https://github.com/bsampaio/velv-coding-challenge/blob/master/public/img/prints/filters.png?raw=true)
+####Comparison
+![alt text](https://github.com/bsampaio/velv-coding-challenge/blob/master/public/img/prints/comparison.png?raw=true)
+
+
 ## About me
 My name is Breno Grillo and you can find me at:
 - [Email (brenogrillo@gmail.com)](mailto:brenogrillo@gmail.com)

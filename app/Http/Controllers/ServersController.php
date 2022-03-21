@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UpdateServersDataResource;
 use App\Mappers\SearchableInformationMapper;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Cache;
@@ -43,15 +44,12 @@ class ServersController extends Controller
         });
     }
 
+    /**
+     * @throws Exception
+     */
     public function getTransformedData()
     {
-        $path = self::SOURCE_PATH . 'source.xlsx';
-
-        if(!Storage::exists($path)) {
-            throw new \Exception();
-        }
-
-        $file = Storage::get($path);
+        $file = $this->getSourceFile();
 
         $data = SimpleXLSX::parse($file, true);
         $rows = $data->rows();
@@ -63,9 +61,28 @@ class ServersController extends Controller
 
         return null;
     }
-    //Cache it
 
+    public function getLocations()
+    {
+        return Cache::remember('server-locations-unique', 360, function() {
+            $servers = collect($this->readDataSource());
+            return $servers->pluck('location')->unique()->values();
+        });
+    }
 
-    //Send to front
+    /**
+     * @return string
+     * @throws Exception
+     */
+    public function getSourceFile(): string
+    {
+        $path = self::SOURCE_PATH . 'source.xlsx';
 
+        if (!Storage::exists($path)) {
+            throw new Exception();
+        }
+
+        $file = Storage::get($path);
+        return $file;
+    }
 }

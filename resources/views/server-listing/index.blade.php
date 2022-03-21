@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Shop Homepage - Start Bootstrap Template</title>
+    <title>Velv - Server Listing - Coding Challenge</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap icons-->
@@ -150,7 +150,7 @@
                         <div class="row-fluid">
                             <div class="col">
                                 <select class="form-control select2" data-select2-property="location" multiple="true" v-model="filters.selected.location">
-                                    <option v-for="locationOptions in filters.options.location">@{{ hddOption }}</option>
+                                    <option v-for="locationOptions in filters.options.location">@{{ locationOptions }}</option>
                                 </select>
                             </div>
                         </div>

@@ -2241,6 +2241,16 @@ window.app = new (vue_dist_vue_js__WEBPACK_IMPORTED_MODULE_0___default())({
         if (instance.filters.selected.hdd.indexOf(s.hdd.type) > -1) {
           return s;
         }
+      }); //Locations filter:
+
+      servers = servers.filter(function (s) {
+        if (!instance.filters.selected.location || instance.filters.selected.location.length <= 0) {
+          return s;
+        }
+
+        if (instance.filters.selected.location.indexOf(s.location) > -1) {
+          return s;
+        }
       });
       return servers;
     }
@@ -2250,6 +2260,12 @@ window.app = new (vue_dist_vue_js__WEBPACK_IMPORTED_MODULE_0___default())({
       var instance = this;
       axios.get('api/servers').then(function (response) {
         instance.servers = response.data;
+      });
+    },
+    loadLocations: function loadLocations() {
+      var instance = this;
+      axios.get('api/servers/locations').then(function (response) {
+        instance.filters.options.location = response.data;
       });
     },
     addToComparison: function addToComparison(server) {
@@ -2271,6 +2287,7 @@ window.app = new (vue_dist_vue_js__WEBPACK_IMPORTED_MODULE_0___default())({
     }
   },
   mounted: function mounted() {
+    this.loadLocations();
     this.loadServers();
   }
 });

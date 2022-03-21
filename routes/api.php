@@ -21,3 +21,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/servers/update-source', [ServersController::class, 'updateDataSource']);
 Route::get('/servers', [ServersController::class, 'readDataSource']);
+Route::get('/servers/locations', [ServersController::class, 'getLocations']);

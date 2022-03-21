@@ -37,7 +37,7 @@ class ServersController extends Controller
     //Transform in rows
     public function readDataSource()
     {
-        return Cache::remember('server-data-transformed', 1, function() {
+        return Cache::remember('server-data-transformed', 360, function() {
             $data = $this->getTransformedData();
             return $data;
         });
